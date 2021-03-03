@@ -1,0 +1,6 @@
+framework module Pods_MealDB_MealDBUITests {
+  umbrella header "Pods-MealDB-MealDBUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

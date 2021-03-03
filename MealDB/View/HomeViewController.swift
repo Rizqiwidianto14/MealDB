@@ -6,14 +6,18 @@
 //
 
 import UIKit
+import Moya
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var HomeCollectionView: UICollectionView!
+    var networkProvider = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        networkProvider.getMealData(category: "Seafood") { meal in
+            print(meal)
+        }
     }
    
 
