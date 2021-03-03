@@ -7,6 +7,7 @@ target 'MealDB' do
 
   # Pods for MealDB
 pod 'Moya/RxSwift', '~> 14.0'
+pod 'RxCocoa','~> 5.0.0'
 
   target 'MealDBTests' do
     inherit! :search_paths

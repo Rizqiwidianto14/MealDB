@@ -72,7 +72,7 @@
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="HhJ-hz-cih"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="H9d-wE-gEE"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="jl5-he-YTZ"/>
                                 </connections>
                             </collectionView>
@@ -87,7 +87,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="HomeCollectionView" destination="3Ep-4N-b00" id="gKB-zr-4dT"/>
+                        <outlet property="homeCollectionView" destination="3Ep-4N-b00" id="gKB-zr-4dT"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="AYY-Dh-P44"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
