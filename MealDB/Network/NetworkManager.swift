@@ -16,14 +16,15 @@ protocol Network {
 
 class NetworkManager: Network {
     
-    let provider = MoyaProvider<MealApi>()
+    let provider = MoyaProvider<EndPoint>()
     
+    //MARK: Fetch Menu Data
     func getMealData(category: String, completion: @escaping ([Meal])->()){
         provider.request(.category(category: category)){ result in
             switch result {
             case let .success(response):
                 do {
-                    let results = try JSONDecoder().decode(FoodCategory.self, from: response.data)
+                    let results = try JSONDecoder().decode(FoodModel.self, from: response.data)
                     completion(results.meals)
                 } catch let err {
                     print(err)
@@ -31,9 +32,29 @@ class NetworkManager: Network {
             case let .failure(error):
                 print(error)
             }
-
+            
         }
+    }
+    
+    // MARK: Fetch Recipe Data
+    func getRecipeData(id: String, completion: @escaping ([Recipe])->()){
+        provider.request(.recipeInfo(id: id)){ result in
+            switch result {
+            case let .success(response):
+                do {
+                    let results = try JSONDecoder().decode(RecipeModel.self, from: response.data)
+                    completion(results.meals)
+                } catch let err {
+                    print(err)
+                }
+            case let .failure(error):
+                print(error)
+            }
+            
         }
-
+    }
+    
+    
+    
     
 }

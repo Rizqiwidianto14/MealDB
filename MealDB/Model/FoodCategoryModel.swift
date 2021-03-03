@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FoodCategory: Decodable {
+struct FoodModel: Decodable {
     let meals:[Meal]
 }
 

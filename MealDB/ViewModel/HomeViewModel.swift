@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import RxSwift
 import Moya
-import RxCocoa
 
 struct HomeViewModel{
     let strMeal: String
@@ -22,17 +20,3 @@ struct HomeViewModel{
     }
     
 }
-
-
-
-
-//    var networkProvider = NetworkManager()
-//    var posts = BehaviorRelay<[Meal]>(value: [])
-//
-//    func getMeal(){
-//
-//        networkProvider.getMealData(category: "Seafood") { meal in
-//            print(meal[0].strMeal)
-//        }
-//
-//    }

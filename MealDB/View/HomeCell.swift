@@ -11,6 +11,7 @@ class HomeCell: UICollectionViewCell {
     @IBOutlet weak var mealImage: UIImageView!
     @IBOutlet weak var mealLabel: UILabel!
     
+    //MARK: Setting Up The Cell Elements & Fetch URL to UIImage
     var homeViewModel: HomeViewModel! {
         didSet {
             mealLabel.text = homeViewModel.strMeal

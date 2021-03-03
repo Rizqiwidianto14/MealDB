@@ -8,13 +8,12 @@
 import Foundation
 import Moya
 
-//https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
-
-enum MealApi {
+enum EndPoint {
     case category(category:String)
+    case recipeInfo(id: String)
 }
 
-extension MealApi: TargetType {
+extension EndPoint: TargetType {
     var baseURL: URL {
         guard let url = URL(string: "https://www.themealdb.com/api/json/v1/1/") else { fatalError("baseURL could not be configured.")}
         return url
@@ -24,7 +23,10 @@ extension MealApi: TargetType {
         switch self {
         case .category:
             return "filter.php"
+        case .recipeInfo:
+            return "lookup.php"
         }
+
     }
     
     var method: Moya.Method {
@@ -36,11 +38,11 @@ extension MealApi: TargetType {
     }
     
     var task: Task {
-        
         switch self {
         case .category(let category):
             return .requestParameters(parameters: ["c":category], encoding: URLEncoding.queryString)
-            
+        case .recipeInfo(let id):
+            return .requestParameters(parameters: ["i" : id], encoding: URLEncoding.queryString)
         }
         
     }

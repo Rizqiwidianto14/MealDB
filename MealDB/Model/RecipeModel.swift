@@ -7,10 +7,9 @@
 
 import Foundation
 
-struct RecipeCategory: Decodable {
+struct RecipeModel: Decodable {
     let meals:[Recipe]
 }
-
 
 struct Recipe: Decodable {
     let strMeal: String
